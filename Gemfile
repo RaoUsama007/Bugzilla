@@ -66,3 +66,5 @@ gem "pundit", "~> 2.2"
 gem 'devise'
 
 gem 'rubocop-rails', require: false
+
+gem "rolify"
