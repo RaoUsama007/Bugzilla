@@ -68,3 +68,5 @@ gem 'devise'
 gem 'rubocop-rails', require: false
 
 gem "rolify"
+
+gem 'devise-bootstrap-views', '~> 1.0'
