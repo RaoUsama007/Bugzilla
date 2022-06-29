@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
 
       t.string :name#i am not sure about it kay inko idr he use krna hy ya modules ma
-      t.enum :user_type
+      t.string :user_type
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

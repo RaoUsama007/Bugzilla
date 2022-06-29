@@ -1,16 +1,16 @@
 class CreateBugs < ActiveRecord::Migration[5.2]
   def change
     create_table :bugs do |t|
-      t.string :name
-      t.integer :creator_id
-      t.integer :developer_id
-      t.unique :project_id
+      t.string :name, null: false
+      t.references :creator, class_name: :User, index: true
+      t.references :developer, class_name: :User, index: true
+      t.references :project, index: true
       t.text :description
-      t.unique :title
-      t.date :deadline
+      t.string :title, index: { unique: true }
+      t.datetime :deadline
       t.string :screenshot
-      t.enum :type
-      t.enum :status
+      t.string :type
+      t.string :status
 
       t.timestamps
     end
