@@ -13,13 +13,14 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @user = User.
   end
 
   # GET /projects/1/edit
   def edit
   end
 
-  # POST /projects or /projects.json
+  # POST /projects
   def create
     @project = Project.new(project_params)
 

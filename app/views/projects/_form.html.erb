@@ -18,8 +18,14 @@
 
   <div class="field">
     <%= form.label :manager_id %>
-    <%= form.number_field :manager_id %>
+    <%= form.text_field :manager_id %>
   </div>
+
+  <div>
+    <%= form_with(scope: "user") do |f|
+      <%= f.select :id, @user.map{ |u| [u.name,u.id] }
+    <% end %>
+  </div> %
 
   <div class="actions">
     <%= form.submit %>

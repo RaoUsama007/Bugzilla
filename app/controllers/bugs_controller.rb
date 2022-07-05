@@ -1,25 +1,20 @@
 class BugsController < ApplicationController
   before_action :set_bug, only: %i[ show edit update destroy ]
 
-  # GET /bugs or /bugs.json
   def index
     @bugs = Bug.all
   end
 
-  # GET /bugs/1 or /bugs/1.json
   def show
   end
 
-  # GET /bugs/new
   def new
     @bug = Bug.new
   end
 
-  # GET /bugs/1/edit
   def edit
   end
 
-  # POST /bugs or /bugs.json
   def create
     @bug = Bug.new(bug_params)
 
@@ -34,7 +29,6 @@ class BugsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bugs/1 or /bugs/1.json
   def update
     respond_to do |format|
       if @bug.update(bug_params)
@@ -47,7 +41,6 @@ class BugsController < ApplicationController
     end
   end
 
-  # DELETE /bugs/1 or /bugs/1.json
   def destroy
     @bug.destroy
 
@@ -58,7 +51,6 @@ class BugsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_bug
       @bug = Bug.find(params[:id])
     end
