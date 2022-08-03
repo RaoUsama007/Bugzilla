@@ -16,16 +16,16 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :manager_id %>
-    <%= form.text_field :manager_id %>
-  </div>
 
-  <div>
-    <%= form_with(scope: "user") do |f|
-      <%= f.select :id, @user.map{ |u| [u.name,u.id] }
-    <% end %>
-  </div> %
+  <%= form.select :user, User.all.pluck(:name , :id) %>
+  <%# <div>
+    <%= form_for(scope: "user") do |f| %>
+      <%# <%= f.select :id, User.all.map{ |u| [u.name,u.id] } %>
+      <%# <% f.submit %>
+    <%# <% end %>
+  <%# </div> %>
+
+  <br>
 
   <div class="actions">
     <%= form.submit %>

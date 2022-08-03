@@ -18,17 +18,17 @@
 
   <div class="field">
     <%= form.label :creator_id %>
-    <%= form.number_field :creator_id %>
+    <%= form.select :user, User.all.pluck(:name , :id) %>
   </div>
 
   <div class="field">
     <%= form.label :developer_id %>
-    <%= form.number_field :developer_id %>
+    <%= form.select :user, User.all.pluck(:name , :id) %>
   </div>
 
   <div class="field">
     <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
+    <%= form.select :project, Project.all.pluck(:name , :id) %>
   </div>
 
   <div class="field">

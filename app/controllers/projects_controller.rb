@@ -13,7 +13,6 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @user = User.
   end
 
   # GET /projects/1/edit
@@ -22,6 +21,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
+
     @project = Project.new(project_params)
 
     respond_to do |format|
@@ -50,6 +50,7 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1 or /projects/1.json
   def destroy
+
     @project.destroy
 
     respond_to do |format|
